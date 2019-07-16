@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 
+import border from '../styles/border'
+
 const SearchContainer = styled.div`
   padding: .12rem .15rem;
 `
 
-const BorderContainer = styled.div`
+const InputContainer = styled.div`
   height: .4rem;
-  border: ${props => props.hasBorder ? 'solid 1px #ee742f' : '0' };
+  /* border: ${props => props.hasBorder ? 'solid 1px #ee742f' : '0' }; */
   border-radius: .04rem;
   display: flex;
   justify-content: center;
@@ -19,49 +21,14 @@ const BorderContainer = styled.div`
   }
 `
 
-const OnePxBorder = styled(BorderContainer)`
-  position: relative;
-  border-radius: ${props => props.radius};
-  &::after {
-    pointer-events: none;
-    position: absolute;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    content: "\0020";
-    border-color: ${props => props.borderColor || '#ccc'};
-    border-style: ${props => props.borderStyle || 'solid'};
-    border-width: ${props => props.borderWidth || '1px'};
-
-    @include responsive(retina1x) {
-        width: 100%;
-        height: 100%;
-        @if $radius != null {
-            border-radius: $radius;
-        }
-    }
-    @include responsive(retina2x) {
-        width: 200%;
-        height: 200%;
-        @include transform(scale(.5));
-        @if $radius != null {
-            border-radius: $radius * 2;
-        }
-    }
-    @include responsive(retina3x) {
-        width: 300%;
-        height: 300%;
-        @include transform(scale(.33333));
-        @if $radius != null {
-            border-radius: $radius * 3;
-        }
-    }
-    @include transform-origin(0 0);
-  }
-`
+const BorderedInputContainer = border({
+  component: InputContainer,
+  borderRadius: 0.04,
+  borderColor: '#ee742f'
+})
 
 export {
   SearchContainer,
-  BorderContainer,
-  OnePxBorder
+  InputContainer,
+  BorderedInputContainer
 }

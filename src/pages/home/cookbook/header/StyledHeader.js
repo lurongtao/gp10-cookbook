@@ -7,6 +7,10 @@ const Head = styled.div`
   text-align: center; 
   font-size: .18rem;
   color: #fff;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  top: 0;
 `
 
 export {

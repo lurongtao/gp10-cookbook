@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import {
   SearchContainer,
-  OnePxBorder
+  BorderedInputContainer
 } from './StyledSearch'
 
 import SearchIcon from '../../assets/images/search.png'
@@ -11,10 +11,10 @@ class Search extends Component {
   render() {
     return (
       <SearchContainer>
-        <OnePxBorder background="transparent" hasBorder={true}>
+        <BorderedInputContainer background="transparent" hasBorder={true}>
           <img src={SearchIcon} alt=""/>
           <span>想吃什么搜这里，如川菜</span>
-        </OnePxBorder>
+        </BorderedInputContainer>
       </SearchContainer>
     )
   }

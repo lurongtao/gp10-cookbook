@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 
 import Header from './header/Header'
-import Swiper from './swiper/Swiper'
+import { SwiperContainer as Swiper } from './swiper/'
 import Search from '../../../components/search/Search'
 import HotCategories from './hot-categories/HotCategories'
+import ExllentFood from './excellent-food/ExcellentFood'
 
 import {
   CookbookContainer
@@ -15,8 +16,9 @@ export default class Cookbook extends Component {
       <CookbookContainer>
         <Header></Header>
         <Swiper></Swiper>
-        <Search></Search>
+        <Search background="transparent" hasBorder={true}></Search>
         <HotCategories></HotCategories>
+        <ExllentFood></ExllentFood>
       </CookbookContainer>
     )
   }

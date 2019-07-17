@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Grid } from 'antd-mobile'
 
-import { Item } from './StyledHotCategories'
+import { Item, Title } from './StyledHotCategories'
 
 class HotCateGories extends Component {
   constructor(props) {
@@ -13,17 +13,22 @@ class HotCateGories extends Component {
 
   render() {
     return (
-      <Grid 
-        data={this.state.list}
-        columnNum={4}
-        hasLine={false}
-        renderItem={dataItem => (
-          <Item>
-            {dataItem.img && <img src={dataItem.img} alt="" />}
-            <span>{dataItem.title}</span>
-          </Item>
-        )} 
-      />
+      <>
+        <Title>
+          热门分类
+        </Title>
+        <Grid 
+          data={this.state.list}
+          columnNum={4}
+          hasLine={false}
+          renderItem={dataItem => (
+            <Item>
+              {dataItem.img && <img src={dataItem.img} alt="" />}
+              <span>{dataItem.title}</span>
+            </Item>
+          )} 
+        />
+      </>
     )
   }
 

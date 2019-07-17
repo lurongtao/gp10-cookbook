@@ -19,7 +19,7 @@ const border = function({
       content: "";
       border-color: ${borderColor};
       border-style: ${borderStyle};
-      border-width: ${borderWidth};
+      border-width: ${props => props.hasBorder ? borderWidth : 0};
 
       @media screen and (max--moz-device-pixel-ratio: 1.49),
         (-webkit-max-device-pixel-ratio: 1.49),

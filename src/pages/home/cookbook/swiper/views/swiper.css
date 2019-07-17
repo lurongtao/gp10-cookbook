@@ -1,0 +1,10 @@
+.am-carousel .slider-frame {
+  height: 0 !important;
+  padding-bottom: 66.666667% !important;
+}
+
+.am-activity-indicator-sm {
+  height: 0 !important;
+  padding-bottom: 66.666667% !important;
+  transform: translate(calc(50% - .5rem), calc(50%));
+}

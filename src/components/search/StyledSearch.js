@@ -8,7 +8,6 @@ const SearchContainer = styled.div`
 
 const InputContainer = styled.div`
   height: .4rem;
-  /* border: ${props => props.hasBorder ? 'solid 1px #ee742f' : '0' }; */
   border-radius: .04rem;
   display: flex;
   justify-content: center;

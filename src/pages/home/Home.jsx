@@ -12,12 +12,13 @@ import more from '../../assets/images/more.png'
 import moreActive from '../../assets/images/more-active.png'
 
 import Cookbook from './cookbook/Cookbook'
+import Categories from './categories/Categories'
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'cookbook',
+      selectedTab: 'menu',
       hidden: false,
       fullScreen: true,
     };
@@ -31,6 +32,7 @@ class Home extends React.Component {
           tintColor="#000"
           barTintColor="white"
           hidden={this.state.hidden}
+          prerenderingSiblingsNumber={0}
         >
           <TabBar.Item
             title="美食大全"
@@ -82,7 +84,7 @@ class Home extends React.Component {
             }}
             data-seed="menu"
           >
-            <div>menu</div>
+            <Categories></Categories>
           </TabBar.Item>
           <TabBar.Item
             icon={

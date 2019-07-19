@@ -12,16 +12,18 @@ import more from '../../assets/images/more.png'
 import moreActive from '../../assets/images/more-active.png'
 
 import Cookbook from './cookbook/Cookbook'
-import Categories from './categories/Categories'
+import { Categories } from './categories/'
+
+import { withRouter } from 'react-router-dom'
 
 class Home extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      selectedTab: 'menu',
+      selectedTab: 'cookbook',
       hidden: false,
       fullScreen: true,
-    };
+    }
   }
   
   render() {
@@ -80,7 +82,8 @@ class Home extends React.Component {
             onPress={() => {
               this.setState({
                 selectedTab: 'menu',
-              });
+              })
+              this.props.history.push('/category')
             }}
             data-seed="menu"
           >
@@ -132,4 +135,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home
+export default withRouter(Home)

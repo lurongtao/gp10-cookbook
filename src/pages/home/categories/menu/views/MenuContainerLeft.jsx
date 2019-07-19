@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 
+import { MenuContainer as Menu } from 'components/menu/'
+
 class MenuContainer extends Component {
+  
   render() {
     return (
-      <>
-        {this.props.type}
-      </>
+      <Menu type="category"></Menu>
     )
   }
 }

@@ -1,34 +1,41 @@
 import React, { Component } from 'react'
 
 import { HeaderContainer as Header } from './header/'
-import { MenuContainer as Menu } from './menu/'
+import { MenuContainerLeft as MenuLeft, MenuContainerRight as MenuRight } from './menu/'
 import Search from 'components/search/Search'
 
+import {
+  StyledCategories
+} from './StyledCategories'
+
+import {
+  Route,
+  withRouter
+} from 'react-router-dom'
 
 class Categories extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      type: 'menu1'
-    }
     this.handleMessage = this.handleMessage.bind(this)
   }
   
   render() {
     return (
-      <>
+      <StyledCategories>
         <Header onMessage={this.handleMessage}></Header>
         <Search background="#eee" hasBorder={false}></Search>
-        <Menu type={this.state.type}></Menu>
-      </>
+
+        <Route path="/category" component={MenuLeft}></Route>
+        <Route path="/material" component={MenuRight}></Route>
+
+      </StyledCategories>
     )
   }
 
   handleMessage(dir) {
-    this.setState({
-      type: dir === 'left' ? 'menu1' : 'menu2'
-    })
+    let path = dir === 'left' ? '/category' : '/material'
+    this.props.history.push(path)
   }
 }
 
-export default Categories
+export default withRouter(Categories)

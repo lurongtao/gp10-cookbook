@@ -1,5 +1,7 @@
-import MenuContainer from './views/MenuContainer'
+import MenuContainerLeft from './views/MenuContainerLeft'
+import MenuContainerRight from './views/MenuContainerRight'
 
 export {
-  MenuContainer
+  MenuContainerLeft,
+  MenuContainerRight
 }

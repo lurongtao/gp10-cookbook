@@ -3,9 +3,11 @@ import {
 } from 'redux'
 
 import { reducer as foodlist } from 'cookbook/swiper/'
+import { reducer as menulist } from 'cookbook/hot-categories/'
 
 const reducer = combineReducers({
-  foodlist
+  foodlist,
+  menulist
 })
 
 export default reducer

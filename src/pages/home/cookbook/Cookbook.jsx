@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Header from './header/Header'
 import { SwiperContainer as Swiper } from './swiper/'
 import Search from '../../../components/search/Search'
-import HotCategories from './hot-categories/HotCategories'
+import { HotCategories } from './hot-categories/'
 import ExllentFood from './excellent-food/ExcellentFood'
 
 import {

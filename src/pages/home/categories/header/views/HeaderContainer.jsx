@@ -4,11 +4,24 @@ import {
   StyledHeaderContainer
 } from './StyledHeaderContainer'
 
+import { withRouter } from 'react-router-dom'
+
 class HeaderContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
       dir: 'left'
+    }
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.location.pathname === '/home/category') {
+      return {
+        dir: 'left'
+      }
+    }
+    return {
+      dir: 'right'
     }
   }
 
@@ -33,4 +46,4 @@ class HeaderContainer extends Component {
   }
 }
 
-export default HeaderContainer
+export default withRouter(HeaderContainer)

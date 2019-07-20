@@ -1,1 +1,11 @@
 https://www.cnblogs.com/pengyunjing/p/9158009.html
+
+React Router 用的哪个版本？
+react-router 3.x
+react-router-com: 4.x 5.x
+
+react-router-dom 4.x 和 5.x 有什么区别
+1、5.x在性能上有了很大的提升
+2、解了两个bug
+- Router 不需要一个唯一的子组件
+- Router 再和connect一起使用的时候，4.x 要求Router在外，connect在内

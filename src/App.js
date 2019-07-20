@@ -4,10 +4,13 @@ import { Provider } from 'react-redux'
 import store from './store/'
 
 import {
-  BrowserRouter as Router
+  BrowserRouter as Router,
+  Route,
+  Redirect
 } from 'react-router-dom'
 
 import Home from './pages/home/Home'
+import List from './pages/list/List'
 
 import './assets/styles/reset.css'
 
@@ -16,7 +19,9 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <Home></Home>
+          <Redirect from="/" to="/home" exact></Redirect>
+          <Route path="/home" component={Home}></Route>
+          <Route path="/list" component={List}></Route>
         </Router>
       </Provider>
     )

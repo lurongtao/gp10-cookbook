@@ -1,0 +1,25 @@
+.am-navbar-title {
+  flex: 12 !important;
+}
+
+.am-search {
+  width: 100% !important;
+}
+
+.am-search {
+  background: #ee742f !important;
+}
+
+.am-navbar.am-navbar-dark {
+  background: #ee742f;
+}
+.am-navbar-left {
+  padding-left: .1rem !important;
+}
+.am-navbar-right {
+  display: none !important;
+}
+
+.am-search-cancel {
+  color: #fff !important;
+}

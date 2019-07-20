@@ -55,7 +55,8 @@ class Home extends React.Component {
             onPress={() => {
               this.setState({
                 selectedTab: 'cookbook',
-              });
+              })
+              this.props.history.push('/home')
             }}
             data-seed="cookbook"
           >
@@ -83,7 +84,7 @@ class Home extends React.Component {
               this.setState({
                 selectedTab: 'menu',
               })
-              this.props.history.push('/category')
+              this.props.history.push('/home/category')
             }}
             data-seed="menu"
           >

@@ -1,0 +1,6 @@
+.am-list-header {
+  padding: 0 !important;
+}
+.am-list {
+  position: static !important;
+}

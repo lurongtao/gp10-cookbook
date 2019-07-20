@@ -9,10 +9,11 @@ function HotCategoriesUI(props) {
       <Title>
         热门分类
       </Title>
-      <Grid 
+      <Grid
         data={props.list}
         columnNum={4}
         hasLine={false}
+        onClick={props.onItemClick.bind(this)}
         renderItem={dataItem => (
           <Item>
             {dataItem.img && <img src={dataItem.img} alt="" />}

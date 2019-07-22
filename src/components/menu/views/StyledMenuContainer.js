@@ -3,9 +3,12 @@ import styled from 'styled-components'
 import border from 'components/styles/border'
 
 const StyledMenuContainer = styled.div`
-  flex: 1;
   display: flex;
   overflow: hidden;
+  position: absolute !important;
+  left: 0;
+  top: 0;
+  width: 100%;
   div:first-child {
     width: .64rem;
     height: 100%;

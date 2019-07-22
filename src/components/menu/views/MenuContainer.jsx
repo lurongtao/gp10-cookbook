@@ -8,6 +8,8 @@ import { connect } from 'react-redux'
 
 import { withRouter } from 'react-router-dom'
 
+import Animate from 'components/high-order/Animate'
+
 const mapState = state => {
   // let { category, material } = state.menulist.list
   return {
@@ -60,4 +62,4 @@ class MenuContainer extends Component {
   }
 }
 
-export default connect(mapState)(withRouter(MenuContainer))
+export default connect(mapState)(withRouter(Animate(MenuContainer)))

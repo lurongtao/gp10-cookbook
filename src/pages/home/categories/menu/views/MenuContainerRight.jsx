@@ -6,7 +6,7 @@ class MenuContainer extends Component {
   
   render() {
     return (
-      <Menu type="material"></Menu>
+      <Menu { ...this.props } type="material"></Menu>
     )
   }
 }

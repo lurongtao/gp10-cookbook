@@ -5,6 +5,11 @@ const StyledCategories = styled.div`
   background: #fff;
   display: flex;
   flex-direction: column;
+  > div.contentWrap {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
 `
 
 export {

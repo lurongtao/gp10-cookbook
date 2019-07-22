@@ -13,6 +13,7 @@ import moreActive from '../../assets/images/more-active.png'
 
 import Cookbook from './cookbook/Cookbook'
 import { Categories } from './categories/'
+import Map from '../map/Map'
 
 import { withRouter } from 'react-router-dom'
 
@@ -114,7 +115,7 @@ class Home extends React.Component {
               });
             }}
           >
-            <div>map</div>
+            <Map></Map>
           </TabBar.Item>
           <TabBar.Item
             icon={{ uri: more }}

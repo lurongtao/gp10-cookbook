@@ -20,7 +20,10 @@ export default (props) => {
           <ul>
             {
               props.data && props.data[props.currentKey].map((value,index) => (
-                <li key={`${value}-${index}`}><span>{value.title || value}</span></li>
+                <li 
+                  key={`${value}-${index}`}
+                  onClick={() => props.history.push('/list', {id: value.id})}
+                ><span>{value.title || value}</span></li>
               ))
             }
           </ul>

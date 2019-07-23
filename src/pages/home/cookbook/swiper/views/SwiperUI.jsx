@@ -7,14 +7,14 @@ export default (props) => {
   return (
     <>
       {
-        props.list.length > 0 
+        props.list.size > 0 
           ? (
             <Carousel
               autoplay={false}
               infinite
             >
             {
-              props.list.map(value => (
+              props.list.toJS().map(value => (
                 <img key={value.id} src={value.img} alt={value.name}/>
               ))
             }

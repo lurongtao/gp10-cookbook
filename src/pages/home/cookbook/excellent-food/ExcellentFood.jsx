@@ -7,7 +7,7 @@ import {
 } from './StyledExcellentFood'
 
 const mapState = state => ({
-  list: state.foodlist.list.slice(0, 10)
+  list: state.getIn(['foodlist', 'list']).slice(0, 10)
 })
 
 class ExcellentFood extends Component {
@@ -18,12 +18,12 @@ class ExcellentFood extends Component {
         <div>
           {
             this.props.list.map(value => (
-              <dl key={value.id}>
+              <dl key={value.get('id')}>
                 <dt>
-                  <img src={value.img} alt={value.name}/>
+                  <img src={value.get('img')} alt={value.get('name')}/>
                 </dt>
-                <dd>{value.name}</dd>
-                <dd>{value.all_click}浏览 {value.favorites}收藏</dd>
+                <dd>{value.get('name')}</dd>
+                <dd>{value.get('all_click')}浏览 {value.get('favorites')}收藏</dd>
               </dl>
             ))
           }

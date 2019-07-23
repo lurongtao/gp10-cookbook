@@ -6,8 +6,10 @@ import HotCategoriesUI from './HotCategoriesUI'
 
 import { loadDataAsync } from '../actionCreator'
 
+import { List } from 'immutable'
+
 const mapState = state => ({
-  list: state.menulist.list
+  list: state.getIn(['menulist', 'list'])
 })
 
 const mapDispatch = (dispatch) => ({
@@ -18,16 +20,21 @@ const mapDispatch = (dispatch) => ({
 
 class HotCateGories extends Component {
   state = {
-    list: []
+    list: List([])
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.list.category) {
+    if (nextProps.list.get('category')) {
       return {
-        list: [...nextProps.list.category['热门'].slice(0, 11), {
+        // list: [...nextProps.list.getIn(['category', '热门']).slice(0, 11), {
+        //   img: '',
+        //   title: '更多...'
+        // }]
+
+        list: nextProps.list.getIn(['category', '热门']).slice(0, 11).push({
           img: '',
           title: '更多...'
-        }]
+        })
       }
     }
 
@@ -36,7 +43,7 @@ class HotCateGories extends Component {
 
   render() {
     return (
-      <HotCategoriesUI onItemClick={this.handleItemClick.bind(this)} list={this.state.list}></HotCategoriesUI>
+      <HotCategoriesUI onItemClick={this.handleItemClick.bind(this)} list={this.state.list.toJS()}></HotCategoriesUI>
     )
   }
 

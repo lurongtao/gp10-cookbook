@@ -9,9 +9,11 @@ const StyledMenuContainer = styled.div`
   left: 0;
   top: 0;
   width: 100%;
+  height: 100%;
   div:first-child {
     width: .64rem;
     height: 100%;
+    overflow: hidden;
     ul {
       width: 100%;
       li {

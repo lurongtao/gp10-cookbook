@@ -5,7 +5,8 @@ import { asyncLoadData } from '../actionCreator'
 import SwiperUI from './SwiperUI'
 
 const mapState = state => ({
-  list: state.foodlist.list.slice(0, 5)
+  // list: state.foodlist.list.slice(0, 5)
+  list: state.getIn(['foodlist', 'list']).slice(0, 5)
 })
 
 const mapDispatch = dispatch => ({

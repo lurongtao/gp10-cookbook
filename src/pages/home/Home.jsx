@@ -21,7 +21,7 @@ class Home extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedTab: 'cookbook',
+      selectedTab: 'map',
       hidden: false,
       fullScreen: true,
     }

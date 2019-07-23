@@ -10,13 +10,11 @@ import { withRouter } from 'react-router-dom'
 
 import Animate from 'components/high-order/Animate'
 
-const mapState = state => {
-  // let { category, material } = state.menulist.list
-  return {
-    category: state.menulist.list.category,
-    material: state.menulist.list.material
-  }
-}
+const mapState = state => ({
+// let { category, material } = state.menulist.list
+  category: state.getIn(['menulist', 'list', 'category']),
+  material: state.getIn(['menulist', 'list', 'material'])
+})
 
 class MenuContainer extends Component {
   constructor(props) {
